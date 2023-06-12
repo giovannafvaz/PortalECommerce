@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <!--Criação do container principal-->
+    <div class="container p-2">
+      <!--Barra de navegação com logo, caixa de pesquisa e links-->
+      <div class="row">
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+          <img src="logo1.jpg" alt="" width="105%" height="100%">
+        </div>
+        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+            <div class="container-fluid">
+              <div class="row bg-body-tertiary">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                  <a class="navbar-brand" href="#">Welcome Guest!</a>
+                  <br><br>
+                  <form class="d-flex" role="search">
+                    <input id="CampoNomeProduto" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="button" onclick="filtraProductsByName()">Search</button>
+                  </form>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                  <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse ps-5 ms-5" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign in</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My account</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Track order</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="row ps-5 ms-5">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pt-2">
+                      Cash on Delivery | 30 Day Return
+                      <br>
+                      24/7 Customer Service <b>1800 00 11 22</b>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                      <img src="carrinho.png" class="size" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+        <!--Linha composta pelo questionário "Quick Find" e pelo carrossel de imagens-->
+        <div class="row">
+          <div class=" mt-5 bg-body-tertiary border">
+            <form class="row ps-4">
+              <div class="row mt-5 text-center">
+                <label class="form-label"><b> Quick find - Choose product</b></label>
+              </div>
+              <div class="row mt-3 text-left">
+                <label class="form-label">Category:</label>
+              </div>          
+              <div class="row mt-3 mb-5">
+                <select id="categoriesDropDown" class="form-select" onchange="filtraProdutosPorCategory()">
+                </select>
+              </div>
+            </form>
+          </div>
+
+        <!--Container secundário para a disposição dos cards com produtos e espaço para "News Letter"-->
+          <div class="container-fluid d-flex flex-wrap">
+            <!--Produtos-->
+              <div id="ListaProdutos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt-5 ps-3 d-flex flex-wrap"></div>
+            </div> 
+
+          <!--Rodapé da página-->
+           <footer class="row p-5 mt-5 color">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <!--Informações do rodapé (métodos de pagamento, links, redes sociais e formas de contato)-->
+              <label><b>Métodos de pagamento</b></label>
+              <br><br>
+              <img src="mastercard.png" class="size ps-1" alt="">
+              <img src="visa.png" class="size ps-1" alt="">
+              <br><br>
+              <img src="amex.png" class="size ps-1" alt="">
+              <img src="paypal.png" class="size ps-1" alt="">
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <label><b>Links rápidos</b></label>
+              <br><br>
+              <p><a href="#" class="link-success">Home</a></p>
+              <p><a href="#" class="link-success">Privacy Policy</a></p>
+              <p><a href="#" class="link-success">Cancelation & Returns</a></p>
+              <p><a href="#" class="link-success">Tracking</a></p>
+              <p><a href="#" class="link-success">FAQ</a></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <label><b>Redes sociais</b></label>
+              <br><br>
+              <img src="instagram.png" class="size" alt="">
+              <img src="twitter.png" class="size" alt="">
+              <br><br>
+              <img src="facebook.png" class="size" alt="">
+              <img src="google.png" class="size" alt="">
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <label><b>Contatos</b></label>
+              <img src="email.png" class="size p-3" alt="">
+            
+              <p>Email: <a href="mailto:giovannafabvaz@gmail.com" class="link-success">giovannafabvaz@gmail.com</a></p>
+              <p>Git: <a href="https://github.com/giovannafvaz" class="link-success">https://github.com/giovannafvaz</a></p>
+            </div>
+           </footer>
+
+          </div>
+      </div>
+      <script src="JS/scripts.js"></script>
+</body>
+</html>
+
+
