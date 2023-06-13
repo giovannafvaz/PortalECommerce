@@ -59,27 +59,30 @@ function desenharListaProdutos(products){
 
     for(i = 0; i < products.length; i++){
         //card de produtos   
-        var divProduto = document.createElement("div");      
+        var divProduto = document.createElement("div");
         divProduto.classList.add("card");
-        divProduto.classList.add("pt-2");
+        //divProduto.classList.add("pt-1");
         divProduto.classList.add("text-center");
-
         divProduto.style.width = "25%";
 
+        //Cria um link para a página de detalhes, passando o id do produto
+        var linkProduto = document.createElement("a");
+        linkProduto.href = "detalhes.html?idProduto=" + products[i].id;
+
+        //Cria um elemento com a imagem do produto
         var imgProduto = document.createElement("img");
         imgProduto.src = products[i].image;
         imgProduto.classList.add("card-img-top");
 
-        divProduto.appendChild(imgProduto);
+        //Adiciona a imagem ao link
+        linkProduto.appendChild(imgProduto);
 
-        divProduto.innerHTML = divProduto.innerHTML + "<b>" + 
+        linkProduto.innerHTML = linkProduto.innerHTML + "<b>" + 
         products[i].title + 
-        "</b> - Cor: " + products[i].baseColour + 
+        "</b><br> Cor: " + products[i].baseColour + 
         "  <br>    <b>R$ " + products[i].price + "</b>";
 
+        divProduto.appendChild(linkProduto);
         ListaProdutosDiv.appendChild(divProduto);      
     }
 }
-
-getAllCategories();
-getProductsByCategory("Footwear - Flip Flops");
