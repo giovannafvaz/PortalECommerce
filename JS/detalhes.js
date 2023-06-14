@@ -3,7 +3,7 @@ function onLoadDetalhes(){
     const urlParams = new URLSearchParams(queryString);
     var idProduto = urlParams.get('idProduto');
     //Chama a função fazGet passando a URL da API de Categories
-    let APIResponse = fazGet("http://diwserver.vps.webdock.cloud:8765/products/" + idProduto);
+    let APIResponse = fazGet("https://diwserver.vps.webdock.cloud/products/" + idProduto);
     //Atribui o resultado da chamada da API à variável responseText
     let responseText = JSON.parse(APIResponse.responseText);
 

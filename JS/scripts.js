@@ -8,7 +8,7 @@ function fazGet(url){
 
 function getAllCategories() {
     //Chama a função fazGet passando a URL da API de Categories
-    let APIResponse = fazGet("http://diwserver.vps.webdock.cloud:8765/products/categories/");
+    let APIResponse = fazGet("https://diwserver.vps.webdock.cloud/products/categories/");
     //Atribui o resultado da chamada da API à variável responseText
     let responseText = JSON.parse(APIResponse.responseText);
     let categoriesDropDown = document.getElementById("categoriesDropDown");
@@ -20,7 +20,7 @@ function getAllCategories() {
 
 function getProductsByName(productName) {
     //Chama a função fazGet passando a URL da API de Categories    
-    let APIResponse = fazGet("http://diwserver.vps.webdock.cloud:8765/products/search?query=" + productName);
+    let APIResponse = fazGet("https://diwserver.vps.webdock.cloud/products/search?query=" + productName);
     //Atribui o resultado da chamada da API à variável responseText
     let responseText = JSON.parse(APIResponse.responseText);
 
@@ -29,7 +29,7 @@ function getProductsByName(productName) {
 
 function getProductsByCategory(selectedCategory) {
     //Chama a função fazGet passando a URL da API de Categories    
-    let APIResponse = fazGet("http://diwserver.vps.webdock.cloud:8765/products/category/" + selectedCategory);
+    let APIResponse = fazGet("https://diwserver.vps.webdock.cloud/products/category/" + selectedCategory);
     //Atribui o resultado da chamada da API à variável responseText
     let responseText = JSON.parse(APIResponse.responseText);
 
